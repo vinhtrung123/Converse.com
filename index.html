@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        window.onload = function() 
+        {
+			var image = document.getElementById('myImage');
+			var imageList = ['bia.jpg', 'bia3.jpg', 'bia4.jpg'];
+			var index = 0;
+			setInterval(function() {
+				image.src = imageList[index];
+				index++;
+				if (index === imageList.length) {
+					index = 0;
+				}
+			}, 3000);
+		
+        };
+
+    </script>
+    <link rel="icon" href="cv.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<style>
+*{
+	padding: 0;
+	margin: 10px;
+}
+#myImage {
+			width: 100%;
+			height: auto;
+		}
+body{
+	font-family:'Open Sans', sans-serif;
+	font-size:14px;
+	color: #111;
+	line-height:1.15;
+}
+.navbar-brand{
+    text-align: center;
+    font-size: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS' , sans-serif;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    
+}
+.nav-tabs{
+    font-size: 25px;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    text-align: center;
+    
+}
+.hot-sale{
+    display: inline-block;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5em;
+  text-shadow: 1px 1px #000;
+  animation: hot-sale 1s infinite;
+}
+@keyframes hot-sale {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+.price-old{
+    text-decoration: line-through;
+    font-family:'Courier New', Courier, monospace;
+}
+.price-new{
+    font-family:'Courier New', Courier, monospace;
+    font-size: large;
+    color: #DC143C;
+    font-weight: 700;
+
+}
+.d-flex{
+    width: 500px;
+    
+}
+.email{
+    width: 200px;
+    font-weight: bold;
+    
+}
+.form-control{
+    height: 49px;
+    font-size: large;
+
+}
+.btn-outline-success{
+    background-color: #111;
+    color: #fff;
+}
+.btn-outline-success:hover{
+    background-color: #3b608e;
+}
+.footer-menu{
+    display: inline-block;
+
+} 
+
+ul.products{
+    width: 93%;
+    padding-top: 50px;
+	list-style:none;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+ul.products li{
+	flex-basis: 25%;
+	padding-left:15px;
+	padding-right:15px;
+	box-sizing:border-box;
+	margin-bottom: 30px;
+}
+ul.products li img{
+	max-width: 100%;
+	height: auto;
+}
+ul.products li .product-top{
+	position: relative;
+	overflow: hidden;
+}
+ul.products li .product-top .product-thumb{
+	display:block;
+}
+ul.products li .hover .product-top .product-thumb img{
+	filter: opacity(80%);
+}
+ul.products li .product-top .product-thumb img{
+	display:block;
+}
+ul.products li .product-top a.buy-now{
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	display:block;
+	background-color:#446084;
+	color:#fff;
+	padding: 10px 0px;
+	position: absolute;
+	bottom: -36px;
+	width: 100%;
+	transition: 0.25s ease-in-out;
+	opacity: 0.85;
+}
+ul.products li:hover a.buy-now{
+	bottom: 0px;
+}
+ul.products li .product-info{
+	padding: 10px 0px;
+}
+ul.products li .product-info a{
+	display:block;
+	text-decoration:none;
+}
+ul.products li .product-info a.product-cat{
+	font-size: 11px;
+	text-transform: uppercase;
+	color: #9e9e9e;
+	padding: 3px 0px;
+}
+ul.products li .product-info a.product-name{
+	color:#334862;
+	padding: 3px 0px;
+}
+ul.products li .product-info .product-price{
+	color: #111;
+	padding: 2px 0px;
+	font-weight: 600;
+}
+.step{
+    display: inline-block;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 50px;
+
+}
+.xuong{
+float:right;
+padding-right: 30px;
+}
+.bia.zoom .bia-content {
+  transform: scale(0);
+  transition: transform 0.8s ease-in-out;
+}
+
+.bia.zoom.active .bia-content {
+  transform: scale(1);
+}
+
+.bia-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.split-line {
+  position: relative;
+  height: 1px;
+}
+
+.split-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.mail{
+height: 30px;
+width: 90px;
+color: #000;
+border-radius: 5px;
+
+}
+.f-field{
+height: 30px;
+width: 150px;
+color: #000;
+border-radius: 2px;
+border:1px solid #334862;
+
+}
+.mail:hover{
+    background-color: #334862;
+    color: #fff;
+}
+.clearfix{
+    color: #000;
+    font-weight: 300;
+}
+.end{
+    margin: auto;
+    padding: auto;
+    margin-top: 50px;
+    border-top: 1px solid white;
+    text-align: center;
+    height: 30px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    
+    background-color: #fff;
+}
+
+        /* CSS cho pop-up */
+        .popup {
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: #f1f1f1;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-header {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .popup-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .popup-close {
+            cursor: pointer;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .popup-close:hover {
+            color: #555;
+        }
+@media screen and (max-width:600px) {
+    .footer-menu {
+      text-align: center;
+    }
+
+    .footer-menu h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .footer-menu img {
+      display: block;
+      margin: 10px auto;
+    }
+
+    .footer-menu form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-menu form p {
+      margin-bottom: 10px;
+    }
+
+    .footer-menu form input[type="search"],
+    .footer-menu form button {
+      display: block;
+      margin: 0 auto;
+    }
+}
+@media (max-width: 768px) {
+    nav .nav-tabs .nav-link,
+    nav .dropdown-menu,
+    nav .shopcart {
+    text-align:center;
+    font-size: medium;
+    }
+    .d-flex {
+        width: 60%;
+        height: 30px;
+    }
+    .d-flex .me-2{
+        height: 30px;
+    }
+    .nav-link.hot-sale{
+        display: none !important;
+    }
+    .shopcart{
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    padding: 0%;
+    margin-right: 0;
+    }
+  }
+  .footer-menu {
+    margin-bottom: 40px;
+  }
+
+  .footer-menu h3 {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .footer-menu img {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .megamenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .megamenu li {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .megamenu a {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .megamenu a:hover {
+    color: #000;
+  }
+
+  .close-menu {
+    display: none;
+  }
+</style>
+</head>
+<body> 
+    <div class="bia zoom">
+        <div class="bia-content">
+            <img id="myImage" src="bia.jpg" style="height: 230px;width: 95%;margin: auto;text-align: left;">
+       </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="cv">
+            <img src="cv.jpg" alt="Logo" width="70" height="55" class="d-inline-block align-text-top">
+            Converse
+          </a>
+        </div>
+    </nav>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a href="index.html" style="color: black">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" style="padding-bottom: 12px; color: #000;">
+                    Home
+                </button>
+            </a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-bottom: 12px;color: #111;">
+                Product 
+            </a>
+          <ul class="dropdown-menu" style="font-size: 12px;" id="sp-pro">
+            <li><a class="dropdown-item" href="#" id="sp-pro"><b>All Converse</b></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" id="sp-pro">Man</a></li>
+            <li><a class="dropdown-item" href="#" id="sp-pro">Woman</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" id="sp-pro">Others</a></li>
+          </ul>
+        
+          <button class="nav-link hot-sale" id="hot-sale" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Hot Sale</button>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-bottom: 12px;color: #111;">
+            Blog
+          </a>
+          <ul class="dropdown-menu" style="font-size: 12px;">
+            <li><a class="dropdown-item" href="#">Fashion</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Lifestyle</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Travel</a></li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+         
+            <div class="shopcart">
+                <a href="sp.html"><i class="fa fa-heart-o" style="display: inline-block;margin: auto;color: #000;"></i></a>
+                <a href="chitiet.html"><i class="fa fa-shopping-cart" style="display: inline-block;padding-top:4px;color: #000;padding-right: 0;"></i></a>
+                <a href="form.html" style="color: #000;"><i class="fa fa-user" style="display: inline-block;padding-top:3px;padding-left: 0;"></i>Login</a>
+            </div>
+                
+        </div>
+        
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+    </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="1000">
+            <img width="95%" height="280" loading="lazy" class="owl-lazy lazyloaded" data-src="" alt="" src="sp2.png" style="opacity: 1;">
+          </div>
+          <div class="carousel-item" data-bs-interval="150">
+            <img width="95%" height="280" loading="lazy" class="owl-lazy lazyloaded" data-src="" alt="" src="sp1.png" style="opacity: 1;">
+          </div>
+          <div class="carousel-item">
+            <img width="95%" height="280" loading="lazy" class="owl-lazy lazyloaded" data-src="" alt="" src="sp5.jpg" style="opacity: 1;">
+          </div>
+          <div class="carousel-item">
+            <img width="95%" height="280" loading="lazy" class="owl-lazy lazyloaded" data-src="" alt="" src="sp4.png" style="opacity: 1;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <p class="step"><a href="#" style="color: #000;" id="home">Home</a>›<a href="#" style="color: #000;" id="sp-pro">Product</a></p>
+    <div class="xuong">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: fit-content;width: fit-content;color: #000;background-color: #fff;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: small;">
+            Sort:Default
+        </button>
+        <ul class="dropdown-menu" style="font-size: 12px;font-family: 'Courier New', Courier, monospace;">
+            <li><a class="dropdown-item" href="#">Sort:Default</a></li>
+            <li><a class="dropdown-item" href="#">Sort:Name</a></li>
+            <li><a class="dropdown-item" href="#">Sort:Price</a></li>
+        </ul>
+    </div>
+
+ <ul class="products" id="products">
+	<li class="s1" id="s1">
+ 		<div class="product-item">
+ 			<div class="product-top">
+ 				<a href="ctsp.html" class="product-thumb">
+ 		            <img src="p1.jpg" alt=""  style="padding-top: 136px;">
+                </a>
+                <a href="ctsp.html" class="buy-now">BUY NOW</a>
+            </div>
+            <div class="product-info">
+ 	            <a href="#" class="product-cat">Converse</a>
+ 	            <a href="ctsp.html" class="product-name">Converse Run Hike Star</a>
+                <div> <span class="tprice">Drake Price: </span> <span class="price-new">1.440.000 đ</span> </div>
+ 	            <div> <span class="tprice">Retail Price: </span> <span class="price-old">1.800.000 đ</span> </div>
+            </div>
+        </div>
+    </li>
+    <li>
+ 
+ 		<div class="product-item">
+ 			<div class="product-top">
+ 				<a href="ctsp1.html" class="product-thumb">
+ 		            <img src="p2.jpg" alt="" style="padding-top:1px;">
+                </a>
+                <a href="ctsp1.html" class="buy-now">BUY NOW</a>
+            </div>
+            <div class="product-info">
+ 	            <a href="#" class="product-cat">Converse</a>
+ 	            <a href="ctsp1.html" class="product-name">Trending Converse Run Star Hike Platform Tri-Panel Color Block</a>
+                <div> <span class="tprice">Drake Price: </span> <span class="price-new">1.930.000 đ</span> </div>
+ 	            <div> <span class="tprice">Retail Price: </span> <span class="price-old">2.500.000 đ</span> </div>
+            </div>
+        </div>
+    </li>
+ 
+    <li>
+ 		<div class="product-item">
+ 			<div class="product-top">
+ 				<a href="ctsp1.html" class="product-thumb">
+ 		            <img  src="p9.png" alt="" style="padding-top: 72px;" >
+                </a>
+                <a href="ctsp1.html" class="buy-now">BUY NOW</a>
+            </div>
+            <div class="product-info">
+ 	            <a href="#" class="product-cat">Converse</a>
+ 	            <a href="ctsp1.html" class="product-name">Converse Chuck Taylor All Star Mix Recycled Platform</a>
+                <div> <span class="tprice">Drake Price: </span> <span class="price-new">1.890.000 đ</span> </div>
+ 	            <div> <span class="tprice">Retail Price: </span> <span class="price-old">2.800.000 đ</span> </div>
+            </div>
+        </div>
+    </li>
+ 
+    <li>
+ 		<div class="product-item">
+ 			<div class="product-top">
+ 				<a href="ctsp.html" class="product-thumb">
+ 		            <img src="p04.png" alt="" style="padding-top: 63px;">
+                </a>
+                <a href="ctsp.html" class="buy-now">BUY NOW</a>
+            </div>
+            <div class="product-info">
+ 	            <a href="#" class="product-cat">Converse</a>
+ 	            <a href="ctsp.html" class="product-name">Converse Run Star Motion 'Black Gum Honey'</a>
+                 <div> <span class="tprice">Drake Price: </span> <span class="price-new">2.440.000 đ</span> </div>
+ 	            <div> <span class="tprice">Retail Price: </span> <span class="price-old">4.600.000 đ</span> </div>
+            </div>
+        </div>
+    </li>
+ 
+    <li>
+ 		<div class="product-item">
+ 			<div class="product-top">
+ 				<a href="ctsp.html" class="product-thumb">
+ 		            <img src="p5.png" alt="" style="padding-top: 19px;">
+                </a>
+                <a href="ctsp.html" class="buy-now">BUY NOW</a>
+            </div>
+            <div class="product-info">
+ 	            <a href="#" class="product-cat">Converse</a>
+ 	            <a href="ctsp.html" class="product-name">Converse Chuck Taylor All Star Move</a>
+                <div> <span class="tprice">Drake Price: </span> <span class="price-new">1.300.000 đ</span> </div>
+ 	            <div> <span class="tprice">Retail Price: </span> <span class="price-old">2.600.000 đ</span> </div>
+            </div>
+        </div>
+    </li>
+    <li>
+ 		<div class="product-item">
+ 			<div class="product-top">
+ 				<a href="ctsp1.html" class="product-thumb">
+ 		            <img  src="p6.png" alt="" style="padding-top: 49px;">
+                </a>
+                <a href="ctsp1.html" class="buy-now">BUY NOW</a>
+            </div>
+            <div class="product-info">
+ 	            <a href="#" class="product-cat">Converse</a>
+ 	            <a href="ctsp1.html" class="product-name">Chuck Taylor All Star Summer Spirit</a>
+                <div> <span class="tprice">Drake Price: </span> <span class="price-new">1.330.000 đ</span> </div>
+ 	            <div> <span class="tprice">Retail Price: </span> <span class="price-old">1.900.000 đ</span> </div>
+            </div>
+        </div>
+    </li>
+</ul>
+ <ul class="pagination" >
+    <li><a href="index.html">|&lt;</a>
+    </li>
+    <li><a href="index.html">&lt;</a>
+    </li>
+    <li class="active"><span>1</span></a>
+    </li>
+    <li><a href="index.html">2</a>
+    </li>
+ </ul> 
+    <div class="split-line"></div>
+
+<footer>
+    <div class="responsive megamenu-style-dev footer-menu"> 
+        <br><br><br><h3><b>Introduce</b></h3> 
+        <nav class="navbar-default"> 
+            <div class=" container-megamenu  horizontal"> 
+                <div class="megamenu-wrapper"> 
+                    <div class="megamenu-pattern"> 
+                        <div class="container"> 
+                            <ul class="megamenu" data-transition="slide" data-animationtime="500"> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="dki.html" class="clearfix"> 
+                                        <strong> About Us </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="dki.html" class="clearfix"> 
+                                        <strong>News </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="#" class="clearfix" id="sp-pr"> 
+                                        <strong> Shopping </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="#" class="clearfix" id="sp-pr"> 
+                                        <strong> Sale </strong> 
+                                    </a>
+                                </li> 
+                            </ul> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </nav> 
+    </div>
+    <div class="responsive megamenu-style-dev footer-menu"> 
+        <h3><b>Infomation </b></h3> 
+        <nav class="navbar-default"> 
+            <div class=" container-megamenu  horizontal"> 
+                <div class="megamenu-wrapper">    
+                    <div class="megamenu-pattern"> 
+                        <div class="container"> 
+                            <ul class="megamenu" data-transition="slide" data-animationtime="500"> 
+                                <li class="">
+                                    <a href="#" class="clearfix"> 
+                                        <strong> Policy </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="#" class="clearfix"> 
+                                        <strong> Regulations </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="#" class="clearfix"> 
+                                        <strong> Security </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="#" class="clearfix"> 
+                                        <strong> Guarantee </strong> 
+                                    </a>
+                                </li> 
+                            </ul> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </nav> 
+    </div>
+    <div class="responsive megamenu-style-dev footer-menu"> 
+        <h3><b>Supports</b> </h3> 
+        <nav class="navbar-default"> 
+            <div class=" container-megamenu  horizontal"> 
+                <div class="megamenu-wrapper">  
+                    <div class="megamenu-pattern"> 
+                        <div class="container"> 
+                            <ul class="megamenu" data-transition="slide" data-animationtime="500"> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="#" class="clearfix"> 
+                                        <strong> Support Online </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="dki.html" class="clearfix"> 
+                                        <strong> Contact </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="dki.html" class="clearfix"> 
+                                        <strong> Recruit </strong> 
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a href="chitiet.html" class="clearfix"> 
+                                        <strong> Check your order </strong> 
+                                    </a>
+                                </li> 
+                            </ul> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </nav> 
+    </div>
+    <div class="responsive megamenu-style-dev footer-menu">
+        <br><br>
+        <h3 ><b> Payment Support</b></h3>
+        <nav class="navbar-default"> 
+            <div class=" container-megamenu  horizontal"> 
+                <div class="megamenu-wrapper">  
+                    <div class="megamenu-pattern"> 
+                        <div class="container">
+                            <img alt="" src="https://drake.vn/image/catalog/icons/logopayment.jpg">
+                            <h3><b>Follow Us</b></h3>
+        <img alt="" src="https://drake.vn/image/catalog/icons/logo-IG-1.jpg">
+        <img alt="" src="https://drake.vn/image/catalog/icons/f_logo_RGB-Hex-Blue_512.jpg">
+        <img alt="" src="https://drake.vn/image/catalog/icons/logo-lazada-2.png" style="height:50px; width:50px">
+        <img alt="" src="https://drake.vn/image/catalog/icons/logo-tiki1a.jpg">
+        <img alt="" src="https://drake.vn/image/catalog/icons/Shopee.png" style="height:50px; width:50px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    </div class="responsive megamenu-style-dev footer-menu">
+    <br>
+    <form class="email" role="search" style="display: inline-block;">
+        <p><strong>GET OFFER NOW </strong></p>
+        <input class="form-control me-2" type="search" placeholder="Enter your email" aria-label="Search" style="display: inline-block;height: 39px;">
+        <button class="btn btn-outline-success" type="submit" style="width: 200px;font-family:'Times New Roman', Times, serif">Register</button>
+    </form>
+ </footer>
+ <div class="end">
+    ©CONVERSE VN - All Rights Reserved. Design Web By TOVINHTRUNG.
+</div>
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <div class="popup-header">Converse 🖤</div>
+        <div class="popup-text"><img src="pop.png" alt="" style="height: 300px;width: 300px;border-radius: 0.3rem;"></div>
+        <div class="popup-close" onclick="closePopup()" style="font-family:'Courier New', Courier, monospace;">Close</div>
+    </div>
+</div>
+
+<script>
+    const hotSaleButton = document.getElementById("hot-sale");
+hotSaleButton.addEventListener("click", () => {
+  // Lấy danh sách sản phẩm đang sale từ cơ sở dữ liệu
+  
+  const saleProducts = getSaleProducts();
+
+  // Hiển thị danh sách sản phẩm đang sale lên trang web
+  displaySaleProducts(saleProducts);
+});
+
+function getSaleProducts() {
+  // Lấy danh sách sản phẩm đang sale từ cơ sở dữ liệu
+  // và trả về danh sách đó
+}
+
+function displaySaleProducts(products) {
+  const productList = document.querySelector(".products");
+
+  // Xóa các sản phẩm hiện có trong danh sách
+  productList.innerHTML = "";
+
+  // Thêm các sản phẩm đang sale vào danh sách
+  products.forEach((product) => {
+    if (product.is_sale) {
+      const productElement = document.createElement("div");
+      productElement.innerHTML = `
+      <div class="product-item">
+        <h2>${product-item.name}</h2>
+          <p>${product-item.price}</p>
+          <p>${product-item.description}</p>  
+      </div>
+        
+      `;
+      productList.appendChild(productElement);
+    }
+  });
+}
+
+function getSaleProducts() {
+    $.ajax({
+        url: "/api/myObj",
+        method: "GET",
+        dataType: "json",
+        success: function(response) {
+            displaySaleProducts(response); // gọi hàm displaySaleProducts với dữ liệu lấy được
+        },
+        error: function(error) {
+            console.log(error); // log lỗi nếu có
+        }
+    });
+}
+function displaySaleProducts(products) {
+    var saleProducts = $("#sale-products"); // lấy element để hiển thị danh sách sản phẩm sale
+
+    $.each(products, function(index,product ) {
+        // tạo HTML cho từng sản phẩm
+        var productHTML = "<div class='product'>" +
+            "<img src='" + product.image + "' alt='" + product.name + "'>" +
+            "<h3>" + product.name + "</h3>" +
+            "<p><strike>" + product.price + "</strike> " + product.sale_price + "</p>" +
+            "</div>";
+
+        saleProducts.append(productHTML); // thêm HTML vào element hiển thị danh sách sản phẩm
+    });
+}
+
+const popup = document.querySelector('.bia');
+const closeBtn = document.querySelector('.close-btn');
+window.onload = function() {
+  popup.classList.add('active');
+}
+
+function closePopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var popup = document.getElementById("popup");
+    setTimeout(function() {
+        popup.style.display = "flex";
+    }, 1000);
+});
+
+// Lắng nghe sự kiện click trên các mục menu
+document.getElementById('hot-sale').addEventListener('click', function() {
+  scrollToSection('products');
+});
+document.getElementById('home').addEventListener('click', function() {
+  scrollToSection('cv');
+});
+document.getElementById('sp-pro').addEventListener('click', function() {
+  scrollToSection('products');
+});
+document.getElementById('sp-pr').addEventListener('click', function() {
+  scrollToSection('products');
+});
+
+// Hàm để di chuyển đến mục được chọn
+function scrollToSection(selectID) {
+  var section = document.getElementById(selectID);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

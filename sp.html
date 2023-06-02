@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Wish List</title>
+  <link rel="icon" href="cv.jpg">
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <style>
+    body {
+  background-color: #fdf1ec;
+}
+
+.wrapper {
+  height: 420px;
+  width: 654px;
+  margin: 50px auto;
+  border-radius: 7px 7px 7px 7px;
+  /* VIA CSS MATIC https://goo.gl/cIbnS */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+  float: left;
+  height: 420px;
+  width: 327px;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+  float: left;
+  height: 420px;
+  width: 327px;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
+}
+
+.product-text {
+  height: 300px;
+  width: 327px;
+}
+
+.product-text h1 {
+  margin: 0 0 0 38px;
+  padding-top: 52px;
+  font-size: 34px;
+  color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: 'Bentham', serif;
+}
+
+.product-text h2 {
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+.product-text p {
+  height: 125px;
+  margin: 0 0 0 38px;
+  font-family: 'Playfair Display', serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-price-btn {
+  height: 103px;
+  width: 327px;
+  margin-top: 17px;
+  position: relative;
+}
+
+.product-price-btn p {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  height: 50px;
+  font-family: 'Trocchi', serif;
+  margin: 0 0 0 38px;
+  font-size: 28px;
+  font-weight: lighter;
+  color: #474747;
+}
+
+span {
+  display: inline-block;
+  height: 50px;
+  font-family: 'Suranna', serif;
+  font-size: 34px;
+}
+
+.product-price-btn button {
+  float: right;
+  height: 50px;
+  width: 176px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: black;
+  cursor: pointer;
+  outline: none;
+}
+
+.product-price-btn button:hover {
+  background-color: #474747;
+}
+.mail{
+height: 30px;
+width: 90px;
+color: #000;
+border-radius: 5px;
+
+}
+.f-field{
+height: 30px;
+width: 150px;
+color: #000;
+border-radius: 2px;
+border:1px solid #334862;
+}
+.step{
+    display: inline-block;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 50px;
+    font-size: large;
+
+}
+.xuong{
+float:right;
+padding-right: 30px;
+}
+.nav-tabs{
+    font-size: 25px;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    text-align: center;
+    
+}
+
+.d-flex{
+    width: 500px;
+    
+}
+.form-control{
+    height: 49px;
+    font-size: large;
+
+}
+.btn-outline-success{
+    background-color: #111;
+    color: #fff;
+}
+.btn-outline-success:hover{
+    background-color: #3b608e;
+}
+.footer-menu{
+    display: inline-block;
+
+} 
+.end{
+    margin: auto;
+    padding: auto;
+    margin-top: 50px;
+    border-top: 1px solid white;
+    text-align: center;
+    height: 50px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    background-color: #fff;
+}
+    /* CSS cho pop-up */
+    .popup {
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: #f1f1f1;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-header {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .popup-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .popup-close {
+            cursor: pointer;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .popup-close:hover {
+            color: #555;
+        }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="1000">
+          <img width="100%" height="280" loading="lazy" class="owl-lazy lazyloaded" data-src="" alt="" src="bia6.jpg" style="opacity: 1;">
+        </div>
+        <div class="carousel-item" data-bs-interval="150">
+          <img width="100%" height="280" loading="lazy" class="owl-lazy lazyloaded" data-src="" alt="" src="bia7.jpg" style="opacity: 1;">
+        </div>
+        <div class="carousel-item">
+          <img width="100%" height="280" loading="lazy" class="owl-lazy lazyloaded" data-src="" alt="" src="bia8.jpg" style="opacity: 1;">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <br>
+  <br> 
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a href="index.html" style="color: black;">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" style="padding-bottom: 12px;">
+              <i class="fa fa-angle-double-left" style="font-weight: bold;">&nbsp;COME BACK TO BUY</i>
+            </button>
+        </a> 
+    </div>
+    <p class="step"><a href="index.html" style="color: #000;">Home</a>&nbsp;&nbsp;&nbsp;›&nbsp;&nbsp;&nbsp;<a href="sp.html"><i class="fa fa-heart-o" style="display: inline-block;margin: auto;color: #000;font-weight: 600;">&nbsp;WISH LIST</i></a></p>
+    <a href="form.html" style="color: #000;"><i class="fa fa-user" style="padding-top:3px;padding-left: 0;float: right;padding-right: 7rem;font-size: 20px;">&nbsp;&nbsp;Login</i></a>
+</nav>
+<br><br>
+<p style="font-size: medium;"><strong>&nbsp;&nbsp;&nbsp;Wish List 🖤</strong></p>
+  <div class="wrapper">
+    <div class="product-img">
+      <img src="w.png" height="420" width="327">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1>CHUCK TAYLOR ALL STAR CX</h1>
+        <h2>by Converse</h2>
+        <p>‘STREET TO STUDIO & BACK’<br> Despite all style standards, be creative & bold with confidence stands out in its <br> own way!</p>
+      </div>
+      <div class="product-price-btn">
+        <p><span>158</span>$</p>
+        <a href="chitiet.html">
+        <button type="button">buy now</button></a>
+      </div>
+    </div>
+    <div class="product-img">
+      <img src="w1.png" height="420" width="327">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1>CHUCK 70 MARQUIS</h1>
+        <h2>by Converse</h2>
+        <p>‘CHUCK 70 MARQUIS’<br> is unique in its timeless neutral color scheme and multi-color block style <br> creating a different highlight.</p>
+      </div>
+      <div class="product-price-btn">
+        <p><span>152</span>$</p>
+        <a href="chitiet.html">
+        <button type="button">buy now</button></a>
+      </div>
+    </div>
+    <div class="product-img">
+      <img src="w2.png" height="420" width="327">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1>CHUCK 70 MARQUIS</h1>
+        <h2>by Converse</h2>
+        <p>‘CHUCK 70 MARQUIS’<br> Designed to raise the bar in comfort and style a 'seamless' design , a unique <br> suede upper .</p>
+      </div>
+      <div class="product-price-btn">
+        <p><span>145</span>$</p>
+        <a href="chitiet.html">
+        <button type="button">buy now</button></a>
+      </div>
+    </div>
+    <div class="end">
+      ©CONVERSE VN - All Rights Reserved. Design Web By TOVINHTRUNG.
+    </div>
+  </div>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+        <div class="popup-header">Discount 🔥🔥🔥</div>
+        <div class="popup-text"><img src="f.jpg" alt="" style="height: 300px;width: 300px;border-radius: 0.3rem;"><br><strong>30% OFF <br> Use Code: <br> FRENZY30</strong></div>
+        <div class="popup-close" onclick="closePopup()" style="font-family:'Courier New', Courier, monospace;">Close</div>
+    </div>
+</div>
+<script>
+  function closePopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var popup = document.getElementById("popup");
+    setTimeout(function() {
+        popup.style.display = "flex";
+    }, 1000);
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+
+</html>
